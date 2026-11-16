@@ -10,8 +10,8 @@ date-based recovery, orchestration, and visualization.
 
 ![Power BI weather overview for Manila, Cebu, and Davao](docs/images/weather-overview.png)
 
-*Overview report with saved forecast data for 2 November 2026.
-[Download the Power BI report](power_bi/weather_analytics.pbix) to explore all three pages.*
+*Redesigned Overview with saved forecast data for 2 November 2026.
+The [downloadable PBIX](power_bi/weather_analytics.pbix) uses the previous layout.*
 
 ## How it works
 
@@ -365,6 +365,15 @@ the primary key. Reapply `sql/analytics.sql` if updating existing views.
 Open [weather_analytics.pbix](power_bi/weather_analytics.pbix) in Power BI Desktop.
 The standalone file includes saved data, visuals, queries, and DAX measures.
 No supporting project files are needed. Only the PBIX is tracked in `power_bi/`.
+<details>
+<summary>Redesigned Hourly Patterns and Snapshot History</summary>
+
+![Hourly temperature, rainfall, and humidity charts](docs/images/weather-hourly-patterns.png)
+
+![Forecast snapshot history showing ingestion times and stored records](docs/images/weather-snapshot-history.png)
+
+</details>
+
 Use the bottom tabs to navigate:
 
 - **Overview:** latest selected complete weather day, city comparisons, mean and
@@ -388,8 +397,8 @@ The model uses **Import** mode. Opening it displays cached data; to update it:
    database `weather`. Change the data source settings if your host or port differs.
 4. Save the PBIX to retain the refreshed data.
 
-Report refresh reads PostgreSQL; it does not run Airflow. The README image is a
-static snapshot and must be replaced separately when you want a newer preview.
+Report refresh reads PostgreSQL independently of Airflow. The screenshots show
+saved report views in Power BI Desktop.
 
 ## Tests
 
