@@ -36,6 +36,17 @@ Airflow runs one extract → transform → load chain per city.
 Weather timestamps use Asia/Manila time. Fetch timestamps use UTC.
 The data represents **model forecasts, not weather-station observations**.
 
+## What I learned
+
+- I learned to make an API pipeline easier to debug by keeping the raw response
+  and validating the data before loading it.
+- I learned to use PostgreSQL keys so retrying a load skips rows from the same
+  snapshot while a fresh forecast can be saved as a new version.
+- I learned how Airflow schedules and retries tasks, and verified that the
+  Docker Compose stack ran a scheduled job on AWS EC2.
+- I learned to make a Power BI report easier to scan by leading with a city
+  comparison and keeping exact readings and coverage in a detail table.
+
 ## Run locally
 
 Commands below use PowerShell from the repository root.
